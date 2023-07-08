@@ -7,6 +7,8 @@ class Author(models.Model):
 
     def __str__(self):
         return self.full_name
+
+
 class Post(models.Model):
     title = models.CharField(max_length=70)
     content = models.TextField()
@@ -15,8 +17,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-
 
 
 CHOICES = (
@@ -32,8 +32,11 @@ class Review(models.Model):
     text = models.TextField(null=True, blank=True)
     stars = models.IntegerField(choices=CHOICES)
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                              related_name='post_review')
+                             related_name='post_review')
     data_review = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.text
+
+
+
