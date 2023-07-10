@@ -1,12 +1,12 @@
 from .serializers import *
 from .models import *
 from rest_framework.viewsets import ModelViewSet
-from django_filters.rest_framework import DjangoFilterBackend
+# from django_filters.rest_framework import DjangoFilterBackend
 
 
 class PostViewSet(ModelViewSet):
     serializer_class = PostSerializer
-    filter_backends = (DjangoFilterBackend)
+    # filter_backends = (DjangoFilterBackend)
     queryset = Post.objects.all()
 
 

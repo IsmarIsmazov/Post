@@ -25,23 +25,25 @@ SECRET_KEY = 'django-insecure-3xc8xx((ap=s8bu-e(+t_sl^ykm^vhc^@kh+a9==zi4p9$3aja
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CREATED_APPS = [
+    'jazzmin',
+    'posts',
+    'rest_framework',
+    'users',
+    'rest_framework.authtoken',
+    'django_filters',
+    'drf_yasg'
+]
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',
-    'jazzmin',
-    'django_filters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'posts',
-    'users',
-    'drf_yasg'
-]
+] + CREATED_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
